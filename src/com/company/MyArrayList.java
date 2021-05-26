@@ -31,7 +31,7 @@ public class MyArrayList<T> implements List<T>, Iterator<T>, Iterable<T> {
 
         T[] temp;
         if (values.length == size) {
-            temp = values;
+            temp = Arrays.copyOf(values,values.length);
             values = (T[]) new Object[(int) (values.length * 1.5)];
             System.arraycopy(temp, 0, values, 0, temp.length);
         }
